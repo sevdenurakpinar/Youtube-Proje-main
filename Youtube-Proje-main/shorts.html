@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Shorts</title>
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons-1.11.0/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="style.css">
+     <script src="script.js"></script>
+    
+
+</head>
+<body class="bodyColor">
+
+  <svg xmlns="http://www.w3.org/2000/svg"  width="8" height="8" fill="currentColor" class="bi bi-arrow-down " viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+  </svg>
+  <div class="shorts ">
+    
+    <iframe class="video" width="400" height="710" src="https://www.youtube.com/embed/HrtoP_tqdak" title="Sinan Engin  tavuğa ayar veriyo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+    <div class="button-container">
+      <button class="like-btn btn btn-outline-dark text-white" id="like-btn" onclick="toggleLike()">
+        <i class="fa-solid fa-thumbs-up"></i>
+      </button>
+      <div class="count like-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="dislike-btn btn btn-outline-dark text-white" id="dislike-btn" onclick="toggleDislike()">
+        <i class="fas fa-thumbs-down"></i>
+      </button>
+      <div class="count dislike-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="comment-btn btn btn-outline-dark text-white" onclick="toggleComment()">
+        <i class="fas fa-comment"></i>
+      </button>
+      <div class="count comment-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="share-btn btn btn-outline-dark text-white" id="share-button" onclick="toggleShareModal()">
+        <i class="fas fa-share"></i>
+      </button>
+      <div class="count text">
+        <p class="prg text">Share</p>
+      </div>
+  
+      <div id="shareModal" class="modal">
+        <div class="modal-content">
+        
+          <p>This is the share modal content.</p>
+          
+          <!-- Diğer paylaşım seçenekleri ekleyebilirsin -->
+        </div>
+      </div>
+  
+      <div>
+        <button class="more-btn btn btn-outline-dark text-white" id="more-button" onclick="toggleMoreModal()">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+  
+      <div class="modal moreModal text-white">
+        <div class="modal-content">
+          <span class="close" onclick="toggleMoreModal()">&times;</span>
+          <ul class="more-options text-white" role="option">
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Explanation</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Save to playlist</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Subtitles</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Do not recommend this channel</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Report</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Send feedback</li>
+          </ul>
+        </div>
+      </div>
+    
+      <a href="https://www.youtube.com/source/nbbmY_56pDQ/shorts?bp=8gVCCjYSJwoLbmJibVlfNTZwRFESC25iYm1ZXzU2cERRGgtuYmJtWV81NnBEURoLbmJibVlfNTZwRFEoh9bQhN7ooZtd"> 
+     
+          <img src="assets/images/cahilertemchannel.jpg" alt="video-voice" class="video-voice">
+        </a>
+        
+      </a>
+    </div>
+  </div>
+  <div class="shorts">
+    <iframe class="video" width="400" height="710" src="https://www.youtube.com/embed/gIH66UBIXpg" title="Bizi yaşayabilecekken yaşayamadıklarımız bitirdi. #erbaturergenekon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+    <div class="button-container ">
+      <button class="like-btn btn btn-outline-dark text-white" id="like-btn" onclick="toggleLike()">
+        <i class="fa-solid fa-thumbs-up"></i>
+      </button>
+      <div class="count like-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="dislike-btn btn btn-outline-dark text-white" id="dislike-btn" onclick="toggleDislike()">
+        <i class="fas fa-thumbs-down"></i>
+      </button>
+      <div class="count dislike-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="comment-btn btn btn-outline-dark text-white" onclick="toggleComment()">
+        <i class="fas fa-comment"></i>
+      </button>
+      <div class="count comment-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="share-btn btn btn-outline-dark text-white" id="share-button" onclick="toggleShareModal()">
+        <i class="fas fa-share"></i>
+      </button>
+      <div class="count text">
+        <p class="prg text">Share</p>
+      </div>
+  
+      <div id="shareModal" class="modal">
+        <div class="modal-content">
+        
+          <p>This is the share modal content.</p>
+          
+          <!-- Diğer paylaşım seçenekleri ekleyebilirsin -->
+        </div>
+      </div>
+  
+      <div>
+        <button class="more-btn btn btn-outline-dark text-white" id="more-button" onclick="toggleMoreModal()">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+  
+      <div class="modal moreModal text-white">
+        <div class="modal-content">
+          <span class="close" onclick="toggleMoreModal()">&times;</span>
+          <ul class="more-options text-white" role="option">
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Explanation</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Save to playlist</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Subtitles</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Do not recommend this channel</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Report</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Send feedback</li>
+          </ul>
+        </div>
+      </div>
+    
+      <a href="https://www.youtube.com/source/gIH66UBIXpg/shorts?bp=8gVDCjYSJwoLZ0lINjZVQklYcGcSC2dJSDY2VUJJWHBnGgtnSUg2NlVCSVhwZxoLZ0lINjZVQklYcGcogd-jjOv706nRAQ%253D%253D"> 
+     
+          <img src="assets/images/nocontexterbatur.jpg" alt="video-voice" class="video-voice">
+        </a>
+        
+      </a>
+    </div>
+  </div>
+  <div class="shorts">
+    <iframe class="video" width="400" height="710" src="https://www.youtube.com/embed/vLDP51PoR7k" title="Sinan Engin yüksek IQ fıkra anlatıyor." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+    <div class="button-container">
+      <button class="like-btn btn btn-outline-dark text-white" id="like-btn" onclick="toggleLike()">
+        <i class="fa-solid fa-thumbs-up"></i>
+      </button>
+      <div class="count like-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="dislike-btn btn btn-outline-dark text-white" id="dislike-btn" onclick="toggleDislike()">
+        <i class="fas fa-thumbs-down"></i>
+      </button>
+      <div class="count dislike-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="comment-btn btn btn-outline-dark text-white" onclick="toggleComment()">
+        <i class="fas fa-comment"></i>
+      </button>
+      <div class="count comment-count">
+        <p class="prg">1</p>
+      </div>
+  
+      <button class="share-btn btn btn-outline-dark text-white" id="share-button" onclick="toggleShareModal()">
+        <i class="fas fa-share"></i>
+      </button>
+      <div class="count text">
+        <p class="prg text">Share</p>
+      </div>
+  
+      <div id="shareModal" class="modal">
+        <div class="modal-content">
+        
+          <p>This is the share modal content.</p>
+          
+          <!-- Diğer paylaşım seçenekleri ekleyebilirsin -->
+        </div>
+      </div>
+  
+      <div>
+        <button class="more-btn btn btn-outline-dark text-white" id="more-button" onclick="toggleMoreModal()">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+  
+      <div class="modal moreModal text-white">
+        <div class="modal-content">
+          <span class="close" onclick="toggleMoreModal()">&times;</span>
+          <ul class="more-options text-white" role="option">
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Explanation</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Save to playlist</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Subtitles</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Do not recommend this channel</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Report</li>
+            <li><yt-icon class="style-scope ytd-menu-service-item-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 50px; height: 50px; fill: currentcolor;"><svg height="25" style="pointer-events: none; display: block; width: 25px; height: 25px;" viewBox="0 0 24 24" width="25" focusable="false"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>Send feedback</li>
+          </ul>
+        </div>
+      </div>
+    
+      <a href="https://www.youtube.com/source/nbbmY_56pDQ/shorts?bp=8gVCCjYSJwoLbmJibVlfNTZwRFESC25iYm1ZXzU2cERRGgtuYmJtWV81NnBEURoLbmJibVlfNTZwRFEoh9bQhN7ooZtd"> 
+     
+          <img src="assets/images/cahilertemchannel.jpg" alt="video-voice" class="video-voice">
+        </a>
+        
+      </a>
+    </div>
+  </div>
+  
+    <script src="assets/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>
